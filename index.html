@@ -18,8 +18,8 @@
       <span class="brand-mark">LH</span>
       <span>성남금토 A-2블록</span>
     </a>
+
     <nav class="quick-nav" aria-label="주요 링크">
-      <a href="tel:16001004">1600-1004</a>
       <a href="https://www.lh.or.kr" target="_blank" rel="noopener">LH 홈페이지</a>
       <a href="https://apply.lh.or.kr" target="_blank" rel="noopener">LH 청약플러스</a>
     </nav>
@@ -28,24 +28,34 @@
   <main id="top" class="page">
     <section class="visual" aria-labelledby="page-title">
       <h1 id="page-title" class="sr-only">성남금토 A-2블록 국민임대주택 안내</h1>
-      <img class="landing-image" src="assets/landing.jpg" alt="성남금토 A-2블록 국민임대주택 안내 이미지. 총 438세대, 판교와 붙은 자리, 강남과 같은 생활, LH콜센터 1600-1004." />
+      <img
+        class="landing-image"
+        src="assets/landing.jpg"
+        alt="성남금토 A-2블록 국민임대주택 안내 이미지. 총 438세대, 판교와 붙은 자리, 강남과 같은 생활."
+      />
     </section>
   </main>
 
-  <div class="floating-cta" aria-label="고정 문의 버튼">
-    <a class="cta cta-call" href="tel:16001004">전화문의 1600-1004</a>
-    <a class="cta cta-apply" href="https://apply.lh.or.kr" target="_blank" rel="noopener">청약플러스 바로가기</a>
+  <div class="floating-cta" aria-label="고정 바로가기 버튼">
+    <a class="cta cta-apply" href="https://apply.lh.or.kr" target="_blank" rel="noopener">
+      청약플러스 바로가기
+    </a>
   </div>
 
   <button class="to-top" type="button" aria-label="상단으로 이동">↑</button>
 
   <script>
     const topButton = document.querySelector('.to-top');
+
     const onScroll = () => {
       topButton.classList.toggle('is-visible', window.scrollY > 500);
     };
+
     window.addEventListener('scroll', onScroll, { passive: true });
-    topButton.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+    topButton.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
   </script>
 </body>
 </html>
