@@ -1,0 +1,224 @@
+:root {
+  --green: #009967;
+  --green-dark: #007a53;
+  --cream: #edf6e7;
+  --text: #16352b;
+  --white: #ffffff;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.14);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  min-width: 320px;
+  color: var(--text);
+  background: linear-gradient(180deg, #d9eac9 0%, #f6fbf1 52%, #ffffff 100%);
+  font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Segoe UI", sans-serif;
+}
+
+a { color: inherit; text-decoration: none; }
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+  padding: 12px clamp(16px, 4vw, 40px);
+  background: rgba(255, 255, 255, 0.86);
+  border-bottom: 1px solid rgba(0, 153, 103, 0.14);
+  backdrop-filter: blur(12px);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: var(--green-dark);
+}
+
+.brand-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 999px;
+  color: var(--white);
+  background: var(--green);
+  font-size: 14px;
+  letter-spacing: 0;
+}
+
+.quick-nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.quick-nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  padding: 8px 13px;
+  border: 1px solid rgba(0, 153, 103, 0.18);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.72);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--green-dark);
+}
+
+.quick-nav a:hover,
+.cta:hover,
+.to-top:hover {
+  transform: translateY(-1px);
+}
+
+.page {
+  width: 100%;
+  padding: 22px 0 110px;
+}
+
+.visual {
+  width: min(741px, 100%);
+  margin: 0 auto;
+  background: #fff;
+  box-shadow: var(--shadow);
+}
+
+.landing-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.floating-cta {
+  position: fixed;
+  left: 50%;
+  bottom: 20px;
+  z-index: 30;
+  display: flex;
+  gap: 10px;
+  width: min(720px, calc(100% - 28px));
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  flex: 1;
+  border-radius: 16px;
+  font-size: clamp(14px, 3.6vw, 18px);
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.18);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  pointer-events: auto;
+}
+
+.cta-call {
+  color: var(--green-dark);
+  background: var(--white);
+  border: 2px solid rgba(0, 153, 103, 0.28);
+}
+
+.cta-apply {
+  color: var(--white);
+  background: var(--green);
+  border: 2px solid var(--green);
+}
+
+.to-top {
+  position: fixed;
+  right: 18px;
+  bottom: 88px;
+  z-index: 31;
+  display: none;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 999px;
+  color: var(--white);
+  background: rgba(0, 122, 83, 0.92);
+  box-shadow: var(--shadow);
+  font-size: 20px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.to-top.is-visible { display: block; }
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 640px) {
+  .topbar {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 10px 12px;
+  }
+
+  .brand-mark {
+    width: 32px;
+    height: 32px;
+    font-size: 12px;
+  }
+
+  .quick-nav {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .quick-nav a {
+    min-height: 32px;
+    padding: 7px 10px;
+    font-size: 12px;
+  }
+
+  .page {
+    padding-top: 0;
+    padding-bottom: 96px;
+  }
+
+  .visual {
+    width: 100%;
+    box-shadow: none;
+  }
+
+  .floating-cta {
+    bottom: 12px;
+    width: calc(100% - 20px);
+    gap: 8px;
+  }
+
+  .cta {
+    min-height: 48px;
+    border-radius: 13px;
+  }
+
+  .to-top {
+    right: 12px;
+    bottom: 78px;
+  }
+}
